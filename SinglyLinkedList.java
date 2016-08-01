@@ -6,7 +6,6 @@ import java.util.Iterator;
  * @date 24/07/2016
  * @file SinglyLinkedList.java
  * Implementa una lista enlazada
- * 
  */
 public class SinglyLinkedList<E> implements IList<E>
 {
@@ -23,13 +22,13 @@ public class SinglyLinkedList<E> implements IList<E>
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
-		return count;
+		return 0;
 	}
 
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
-		return count==0;
+		return false;
 	}
 
 	@Override
@@ -75,8 +74,11 @@ public class SinglyLinkedList<E> implements IList<E>
 
 	@Override
 	public E getLast() {
-		// TODO Auto-generated method stub
-		return null;
+		Node<E> finger = head;
+		while (finger.next() != null) {
+			finger = finger.next();
+		}
+		return  finger.value();
 	}
 
 	@Override
@@ -149,25 +151,11 @@ public class SinglyLinkedList<E> implements IList<E>
 		return finger != null;
 	}
 
-	
 	@Override
 	public int indexOf(E value) {
-		  int indexOF = 0;
-		  Node<E> finger = head;
-		  
-		  while (finger !=null)
-		  { 
-		    if (finger.equals(value))
-		    {
-		      return indexOF;
-		    }
-		    
-		    indexOF++;
-		    finger = finger.next();
-		  }
-		 return -1;
+		// TODO Auto-generated method stub
+		return 0;
 	}
-	
 
 	@Override
 	public int lastIndexOf(E value) {
@@ -204,21 +192,4 @@ public class SinglyLinkedList<E> implements IList<E>
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		Node<E> finger = head;
-		String cadena = "";
-		while (finger.next() != null){
-			cadena += finger.value()+" ";
-			finger = finger.next();
-		}
-		return cadena;
-	}
-	
-	
-
 }
